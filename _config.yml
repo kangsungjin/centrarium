@@ -70,12 +70,12 @@ descriptions:
 #     desc: Follow me on Twitter            # Description to display as link title, etc
 #     share: true                           # Include in the "Share" section of posts
 social:
-  - name: Twitter
-    icon: twitter
-    username: TheBenCentra
-    url: https://twitter.com/TheBenCentra
-    desc: Follow me on Twitter
-    share: false
+#  - name: Twitter
+ #   icon: twitter
+  #  username: TheBenCentra
+  #  url: https://twitter.com/TheBenCentra
+  #  desc: Follow me on Twitter
+  #  share: false
 
   - name: Facebook
     icon: facebook
