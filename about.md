@@ -4,6 +4,6 @@ title: About
 permalink: /about/
 ---
 
-<img src="{{ site.baseurl }}/assets/profile-sj.jpeg" title="Profile Picture" class="profile">
+<img src="{{ site.baseurl }}/assets/profile-sj.jpg" title="Profile Picture" class="profile">
 
 Android dev
