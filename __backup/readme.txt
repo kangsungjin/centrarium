@@ -8,3 +8,7 @@ Introduce | Development
     {% post in page.posts %}
         ...
     {%%}
+
+
+3. _layouts/development.html 
+    index.html 에서 클릭하고 들어가는 Posting 정보를 뿌려주는  html로 사용됨.
