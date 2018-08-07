@@ -4,7 +4,7 @@ title: "Developments"
 permalink: /developments/
 ---
 
-{% console.log(site.categories) %}
+{% site.categories %}
 {% for category in site.categories %}
   {% capture cat %}{{ category | last }}{% endcapture %}
   <h2 id="{{cat}}">{{ cat | capitalize }}</h2>
