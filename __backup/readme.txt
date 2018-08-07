@@ -29,3 +29,10 @@ error
     Subject: Page build failed
     The page build failed with the following error:
     The tag `fake_tag` in `index.html` is not a recognized Liquid tag.
+
+    >>>>>> in Source
+    소스 내에서 로그 출력이 되는지 확인 하려다가 난 오류 
+    이런식 > {% for category in site.categories %} >> {% site.categories %}
+
+    이런식 > % for desc in site.descriptions %}
+        {% if desc.cat == cat %} > {%  desc.cat %}
