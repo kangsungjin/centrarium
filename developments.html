@@ -4,17 +4,19 @@ title: "Developments"
 permalink: /developments/
 ---
 
-
+{% console.log(site.categories) %}
 {% for category in site.categories %}
   {% capture cat %}{{ category | last }}{% endcapture %}
   <h2 id="{{cat}}">{{ cat | capitalize }}</h2>
   {% for desc in site.descriptions %}
+  {% desc.cat %}
     {% if desc.cat == cat %}
       <p class="desc"><em>{{ desc.desc }}</em></p>
     {% endif %}
   {% endfor %}
   <ul class="posts-list">
   {% for post in site.categories[cat] %}
+  {% post %}
     <li>
       <strong>
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
