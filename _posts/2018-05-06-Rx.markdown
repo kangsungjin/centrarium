@@ -4,7 +4,7 @@ title:  "Hello Rx"
 date:   2018-05-06 18:12:00
 author: ks J
 categories: rx
-tags: rx rxJava rxAndroid android
+tags: [rx, rxJava, rxAndroid, android]
 ---
 
 

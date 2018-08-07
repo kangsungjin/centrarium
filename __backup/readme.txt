@@ -12,3 +12,6 @@ Introduce | Development
 
 3. _layouts/development.html 
     index.html 에서 클릭하고 들어가는 Posting 정보를 뿌려주는  html로 사용됨.
+
+4. developments.html 
+    HEAD: menu - Development버튼을 클릭 하고 들어가면 나오게 되는 화면.

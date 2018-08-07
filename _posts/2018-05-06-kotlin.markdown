@@ -4,7 +4,7 @@ title:  "Hello Kotlin"
 date:   2018-05-01 16:43:59
 author: ks J
 categories: kotlin
-tags: android
+tags: [android]
 ---
 
 
