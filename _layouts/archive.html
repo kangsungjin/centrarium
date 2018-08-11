@@ -6,17 +6,13 @@ comments: true
 <div class="page">
 
   <header class="post-header">
-    <h1 class="post-title">Posts in "{{ page.title | capitalize }}"</h1>
+    <h1 class="post-title">"{{ page.title | capitalize }}"</h1>
   </header>
 
   {% include page_divider.html %}
 
   <article class="post-content">
-    <ul class="posts-list"> Test
-      {% for post in page.posts %} 
-      <li><strong><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></strong><span class="post-date"> - {{ post.date | date: "%B %-d, %Y" }}</span></li>
-      {% endfor %}
-    </ul>
+    {{ content }}
 
     {% if site.disqus_shortname %}
     {% unless page.disqus_disabled %}
