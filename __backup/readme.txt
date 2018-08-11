@@ -9,6 +9,9 @@ Introduce | Development
 위 목록에서 클릭시 표시할 html, md를 셋팅 하는 부분은 
 ---(path:_layouts/...)
     layout: development,tags,page,post
+
+============================
+
 1. css 사이트의 기본 색을 변경 하고 싶으면 _sass/base/_variables.scss로 가면 된다. 
 
 2. _layouts/archive.html
