@@ -1,6 +1,5 @@
 # RxJava [[http://reactivex.io](http://reactivex.io)]
 
-
 ### 나온 배경
 자바는 동시성 처리를 하는데 번거로움이 많기 때문에 이를 해결하기 위해 넷플릭스에서 RxJava를 개발, 클라이언트 요청을 
 처리할 때 다수의 비동기 실행 흐름(스레드 등)을 생성하고 그것의 결과를 취합하여 최종 리턴하는 방식으로 내부방식에서 변경할수 있도록 개발 
@@ -10,7 +9,7 @@
 + 자바 Future를 조합하기 어렵다는 점을 해결한다. (Java Futures are Expensive to Compose.)
 + 콜백 방식의 문제점을 개선해야 한다 (Callback Have Their Own Problems.)
 
-> #### - 동시성과 Future [이해참조](http://hamait.tistory.com/748)
+> ##### - 동시성과 Future [이해참조](http://hamait.tistory.com/748)
 
 ### 기본 
 
