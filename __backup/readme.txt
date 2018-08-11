@@ -2,7 +2,7 @@
 Introduce | Development
 
 Jekyll 구조
-=================
+=========================================================================
 _includes
 > 부분 파일들이 들어가 있음
 > head, footer, page_divider
@@ -23,15 +23,18 @@ css
  > main.scss 에서 _sass의 있는 css를 호출
 js
 
-=================
+=========================================================================
+
 0. Project 내에 ./
     -index.html
     -posts.html
     -developments.html
     -tags.html 
 위 목록에서 클릭시 표시할 html, md를 셋팅 하는 부분은 
----(path:_layouts/...)
-    layout: development,tags,page,post
+---
+    layout: page                {development,tags,page,post}.html / (path:_layouts/...)
+    title: "Developments"       {{% page.title %}}
+    permalink: /developments/   {{% page.url %}}
 
 ============================
 
@@ -43,7 +46,8 @@ js
     {%%}
 
 
-3. _layouts/development.html 
+3. _layouts/development.html 에 시정한 layout:page는 _layouts/page.html를
+    가리키는 것이다. 
     index.html 에서 클릭하고 들어가는 Posting 정보를 뿌려주는  html로 사용됨.
 
 4. developments.html 
