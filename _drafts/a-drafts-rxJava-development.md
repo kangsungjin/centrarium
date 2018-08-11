@@ -1,55 +1,83 @@
----
-layout: development
-title:  "Hello Rx"
-date:   2018-05-06 18:12:00
-author: ks J
-categories: rx
-tags: [rx, rxJava, rxAndroid, android]
----
-# Rx [http://reactivex.io](http://reactivex.io)
+# RxJava [[http://reactivex.io](http://reactivex.io)]
 
-### RxJava 나온 배경?
-> 자바는 동시성 처리를 하는데 번거로움이 많기 때문에 이를 해결하기 위해 넷플릭스에서 RxJava를 개발, 클라이언트 요청을 
-> 처리할 때 다수의 비동기 실행 흐름(스레드 등)을 생성하고 그것의 결과를 취합하여 최종 리턴하는 방식으로 내부방식에서 변경할수 있도록 개발 
 
-### RxJava 장점?
-1. 동시성을 적극적으로 끌어안을 필요가 있다 (Embrace Concurrency)
-2. 자바 Future를 조합하기 어렵다는 점을 해결한다. (Java Futures are Expensive to Compose.)
-3. 콜백 방식의 문제점을 개선해야 한다 (Callback Have Their Own Problems.)
+### 나온 배경
+자바는 동시성 처리를 하는데 번거로움이 많기 때문에 이를 해결하기 위해 넷플릭스에서 RxJava를 개발, 클라이언트 요청을 
+처리할 때 다수의 비동기 실행 흐름(스레드 등)을 생성하고 그것의 결과를 취합하여 최종 리턴하는 방식으로 내부방식에서 변경할수 있도록 개발 
 
-##### RxJava compile : 'io.reactivex.' + rxjava2:rxjava:2.x
+### 개선점
++ 동시성을 적극적으로 끌어안을 필요가 있다 (Embrace Concurrency)
++ 자바 Future를 조합하기 어렵다는 점을 해결한다. (Java Futures are Expensive to Compose.)
++ 콜백 방식의 문제점을 개선해야 한다 (Callback Have Their Own Problems.)
 
-<table rules="groups">
-  <thead>
-    <tr>
-      <th style="text-align: left">리액티브 API</th>
-      <th style="text-align: center">설명</th>
+> #### - 동시성과 Future [이해참조](http://hamait.tistory.com/748)
 
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td style="text-align: left">RxLifecycle</td>
-      <td style="text-align: left">RxJava를 사용하는 안드로이드 앱용 라이프 사이클 처리 API로서 
-                   메모리 누수 관리에 사용할수 있다.</td>
+### 기본 
 
-    </tr>
-    <tr>
-      <td style="text-align: left">cell4</td>
-      <td style="text-align: center">cell5</td>
-    </tr>
-  </tbody>
-  <tbody>
-    <tr>
-      <td style="text-align: left">cell1</td>
-      <td style="text-align: center">cell2</td>
+#### ㄱ. import & compile 
 
-    </tr>
-    <tr>
-      <td style="text-align: left">cell4</td>
-      <td style="text-align: center">cell5</td>
+#### ㄴ. Observable (Hello RxJava #2 에서 다시 다룰것) 
 
-    </tr>
-  </tbody>
+#### ㄷ. RxJava 연산자 ( Hello RxJava #3 에서 다시 다룰것) 
 
-</table>
+#### ㄹ. Schedulers (Hello RxJava #4 에서 다시 다룰것)
+<hr/>
+
+#### ㄱ. import
++ dependencies <br>
+ > compile : io.reactivex.rxjava2:rxjava:2.x.y
++ import
+ > import io.reactivex.*;
+
+#### ㄴ. Observable
+
+| rxjava 1.x | rxjava 2.x| 
+|:--------|:-------:|
+| Observable  | Observable  | 
+|----
+|  x  | Maybe  | 
+|----
+|  x  | Flowable  | 
+|----
+{: rules="groups"}
+
+###### rxjava 1.x 과 rxjava 2.x 클래스 비교
+
+
+#### ㄷ. RxJava 연산자 <br/>
+ 기본 함수 : map(),filter(),reduce(),flatmap()
+ 
+
+#### ㄹ. Schedulers 
+
+| Schedulers |rxjava 1.x | rxjava 2.x| 
+|:--------|:-------:|:-------:|
+| 뉴스레드 스케줄러  | .newThread()  |.newThread() |
+|----
+| 싱글 스레드 스케줄러  | 지원안함  | .single()|
+|----
+| 계산 스케줄러   | .computation()  |.computation()  |
+|----
+|  IO 스케줄러  | .io()  |.io() |
+|----
+|  트램펄린 스케줄러  | .trampoline()  | .trampoline()|
+|----
+|  메인 스레드 스케줄러  | .immediate()  | 지원안함 |
+|----
+|  테스트 스레드 스케줄러  | .test()  | 지원안함 |
+|----
+{: rules="groups"}
+
+~~~ java
+String[] strObj = {"K-1","S-2","J-3"};
+Observable<String> source = Observalbe.fromArray(strObj)
+.doOnNext(data - > Log.v(" log data["+data+"]"))
+.subscribeOn( Schedulers.newThread())
+.observeOn( Schedulers.newThread())
+.map(Shape::flip);
+source.subscribe(Log::i);
+
+~~~
+subscribeOn()함수는 Observable를 생성후 실행 될때 사용할 스레드를 지정하는 함수.
+observeOn()함수는 Observable에서 생성된 data가 처리되는 전체를 돌릴 스레드를 지정 하는 함수.
+##### ~ subscribeOn() 과 observeOn() 스레드는 확실히 분리하는것이 좋다(둘다 선언 해주도록 하자)
