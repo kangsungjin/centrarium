@@ -1,6 +1,29 @@
 
 Introduce | Development
 
+Jekyll 구조
+=================
+_includes
+> 부분 파일들이 들어가 있음
+> head, footer, page_divider
+
+_layouts
+>
+
+_posts
+ > 포스팅 파일들이 들어가 있음 
+ > 형식 [YYYY-mm-dd-category_name.확장자]
+
+_sass 
+ > - css style file 및 static css Value file이 들어가 있음
+
+assets
+ > 웹에서 사용하는 리소스를 저장
+css 
+ > main.scss 에서 _sass의 있는 css를 호출
+js
+
+=================
 0. Project 내에 ./
     -index.html
     -posts.html
