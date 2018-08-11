@@ -7,11 +7,18 @@ comments: true
 
 <ul class="tag-cloud">
     {% for tag in site.tags %}
-    <!--style="font-size:{{ tag | last | size | times: 100 | divided_by: site.tags.size | plus: 70  }}"-->
-        <span >
-        <a href="#{{ tag | first | slugize }}">
-            {{ tag | first }}
-        </a> &nbsp;&nbsp;
+
+       <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다   {%  capture tag_name %}{{tag|first|slugize}}{% endcapture %}-->
+      
+       <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+       {% capture font_size %}{{tag|last|size| times:100 | divided_by:site.tags.size | plus: 70 }}%{% endcapture %}
+       <!-- tag_size 변수 지정 {% capture tag_size %}{{tag|last|size}}{% endcapture %}-->
+       
+
+        <span style="font-size:{{font_size}}">
+            <a href="#{{ tag | first | slugize }}">
+                {{ tag | first }}
+            </a> &nbsp;&nbsp;
         </span>
     {% endfor %}
 </ul>

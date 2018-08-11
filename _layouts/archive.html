@@ -16,6 +16,7 @@ layout: default
       <li><strong><a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></strong><span class="post-date"> - {{ post.date | date: "%B %-d, %Y" }}</span></li>
       {% endfor %}
     </ul>
+    {% if page.comments %}
   </article>
 
 </div>
