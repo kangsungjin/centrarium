@@ -2,6 +2,7 @@
 layout: default
 ---
 <div class="post">
+
 <div class="post-header-container {% if page.cover %}has-cover{% endif %}" {% if page.cover %}style="background-image: url({{ page.cover | prepend: site.baseurl }});"{% endif %}>
     <div class="scrim {% if page.cover %}has-cover{% endif %}">
       <header class="post-header">
@@ -9,12 +10,10 @@ layout: default
       </header>
     </div>
 </div>
-<span class="post-date">{{ page.date | date_to_long_string }}</span>
-{% include post_tags.html %}
-<br/>
+
 <div class="wrapper">
 
-{% unless page.cover %} {% include page_divider.html %} {% endunless %}
+<!-- {% unless page.cover %} {% include page_divider.html %} {% endunless %} -->
 
 <article class="post-content">
   {{ content }}
