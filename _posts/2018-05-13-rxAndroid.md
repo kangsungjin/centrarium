@@ -19,5 +19,5 @@ tags: [rxJava, android]
 
 __기본__{: style="color: #1b557a"} <br >
 
-_newThread_{: style="color: #e26716"} -  구독자가 추가 될때 마다 스레드를 새로 생성한다는 의미를 갖습니다. 
+_d_{: style="color: #e26716"} -  구독자가 추가 될때 마다 스레드를 새로 생성한다는 의미를 갖습니다. 
 <br />
