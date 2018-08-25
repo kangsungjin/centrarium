@@ -18,7 +18,7 @@ swift4기반으로 공부중이며, 처음 공부하는것으로 처음 문법�
 
 let 상수 var 변수
 
-~~~swift
+~~~ruby
 var 변수 선언
 
 var artistName:String
@@ -30,7 +30,7 @@ var artistName:String
 playground?
 
 __변수의 타입을 확인해 보자__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 
 type(of: 변수)  - 변수 타입을 확인 할때 사용합니다. 
 
@@ -70,7 +70,7 @@ true
 ~~~
 
 문자열 """ ... """ - 개발자가 입력한 모양대로 그대로 출력하게 만들어줌
-~~~swift
+~~~ruby
 var testStr = """
 테스트를 해
 보   까
@@ -86,7 +86,7 @@ var testStr = """
 ~~~
 
 __문자열 Empty상태인지 확인 해보자__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 var emptyString = ""
 if emptyString.isEmpty {
   print("emptyString: not string")
@@ -105,7 +105,7 @@ emptyString2: !not string
 ~~~
 
 __배열 만드는법__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 var someArray = Array<String>()
 var someArray2 = [String]()
 var somsInt = [Int]()
@@ -150,7 +150,7 @@ print(emptyArray5)
 
 __Dictionary를 확인해보자__{: style="color: #e26716"} - Key:Value형식의 데이터를 만들때 사용합니다.
 데이터를 추가할경우 순서대로 들어가지 않습니다. 알아두세요.
-~~~swift
+~~~ruby
 var str = "Hello, dictionary"
 print(str)
 
@@ -186,7 +186,7 @@ not data
 ~~~
 
 __Dictionary를 확인해보자__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 //Basic Operators - 기본 연산자중 특이하게 보이는것만 정리했습니다. 
 
 
@@ -234,7 +234,7 @@ Control Flow
 <hr />
 
 __for__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 //for
 let names = ["Anna", "Alex", "Brian", "Jack"]
 for name in names {
@@ -314,7 +314,7 @@ cats have 4 legs
 
 
 __while__{: style="color: #e26716"} 
-~~~swift
+~~~ruby
 var age = 0
 while age < 5 {
     age += 1
@@ -332,7 +332,7 @@ _가감, 증감 연산자는 swift2 이후로 사라졌습니다._{: style="colo
 
 
 __swich__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 // switch문에서 한개의 result를 공유할때 유의할점을 표현합니다.
 let anotherCharacter: Character = "a"
 switch anotherCharacter {
@@ -414,7 +414,7 @@ switch someCharacter {
 
 
 __Functions__{: style="color: #e26716"} 
-~~~swift
+~~~ruby
 //func, Name:greet, Param:String, return:String
 func greet(person: String) -> String{
     return "result"
@@ -496,7 +496,7 @@ func5 안녕 Sj 나는 33살이야
 ~~~
 
 __Class__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 class Vehicle{
     //property 초기화를 꼭해야한다 (안하면 error발생된다)
     //stored property
@@ -574,7 +574,7 @@ print("========================")
 
 
 __Structure__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 
 print("========================")
 var name = ["Kim", "Park", "Lee", "Kang"]
@@ -603,7 +603,7 @@ Student : 학생 정보 Kang 22
 
 
 __Optionals__{: style="color: #e26716"}
-~~~swift
+~~~ruby
 // 변수명 뒤에 '!' > Optional을 풀어주는것이다.
 // '!' 변수가 nil일때는 사용하면 안되기때문에 유의해야한다.
 //
