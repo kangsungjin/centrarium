@@ -1,9 +1,9 @@
 ---
-layout: development
+layout: archive
 title:  "Swift4 입문 문법 정리"
-date:   2018-07-06 18:12:00
+date:   2018-07-20 18:12:00
 author: ks J
-categories: swift
+categories: ios
 tags: [ios, swift4]
 ---
 
@@ -12,8 +12,7 @@ tags: [ios, swift4]
 소개
 <hr/>
 swift4기반으로 공부중이며, 처음 공부하는것으로 처음 문법으로 차례대로 정리 해보았습니다. 
-
-
+공부할때 내용에 대해서는 iBooks > The Swift Programming Language를 참조했습니다.
 
 
 let 상수 var 변수
@@ -22,7 +21,7 @@ let 상수 var 변수
 var 변수 선언
 
 var artistName:String
-‘print("The current value of friendlyWelcome is \(friendlyWelcome)")
+print("The current value of friendlyWelcome is \(friendlyWelcome)")
 // Prints "The current value of friendlyWelcome is Bonjour!’
 
 ~~~
@@ -273,14 +272,16 @@ print("====================")
 //for ..
 let minuteInterval = 5
 for tickMark in stride(from: 0, to: minutes, by: minuteInterval) {
-    // stride(from:to:by:)- 0부터 to:60까지(half-open-range처럼 60은 해당되지 않는다.) by:5씩 늘어난다.
+    // stride(from:to:by:)- 0부터 to:60까지(half-open-range처럼 60은 해당되지 않는다.) 
+    // by:5씩 늘어난다.
     // render the tick mark every 5 minutes (0, 5, 10, 15 ... 45, 50, 55)
 }
 print("====================")
 let hours = 12
 let hourInterval = 3
 for tickMark in stride(from: 3, through: hours, by: hourInterval) {
-    // stride(from:through:by:) - from:3부터 through:12(Closed-Range처럼 12까지 진행된다.) by:3씩 늘어난다.
+    // stride(from:through:by:) - from:3부터 through:12(Closed-Range처럼 12까지 진행된다.) 
+    // by:3씩 늘어난다.
     // render the tick mark every 3 hours (3, 6, 9, 12)
 }
 print("====================")
@@ -336,7 +337,7 @@ __swich__{: style="color: #e26716"}
 // switch문에서 한개의 result를 공유할때 유의할점을 표현합니다.
 let anotherCharacter: Character = "a"
 switch anotherCharacter {
-case "a": // Invalid, the case has an empty body
+    case "a": // Invalid, the case has an empty body
     case "A":
         print("The letter A")
     default:
@@ -352,9 +353,15 @@ switch anotherCharacter {
         print("Not the letter A")
 }
 
+print("====================")
+
+
 //IOS Switch문에서는 Half-Open-Range도 사용가능합니다.
 case 1..<5:
-    naturalCount = "a few
+    naturalCount = "a few"
+
+print("====================")
+
 
 //Tuple을 이용한 Switch 
 let somePoint = (1, 1)
@@ -384,7 +391,12 @@ switch anotherPoint {
 --결과--
 // Prints "on the x-axis with an x value of 2
 
+
+print("====================")
+
+
 //Where in Switch - 추가적인 조건을 넣을때 사용합니다. 
+
 let yetAnotherPoint = (1, -1)
 switch yetAnotherPoint {
     case let (x, y) where x == y:
@@ -396,6 +408,10 @@ switch yetAnotherPoint {
 }
 --결과--
 // Prints "(1, -1) is on the line x == -y
+
+
+print("====================")
+
 
 // Compound Cases
 let someCharacter: Character = "e"
@@ -462,10 +478,18 @@ func sayHello(){
 }
 sayHello()
 
+
+print("====================")
+
+
 func sayHello2(name:String){
     print("func2 안녕 \(name)")
 }
 sayHello2(name:"sj")
+
+
+print("====================")
+
 
 func sayHello3(name:String) -> Bool{
     if name.isEmpty{
@@ -476,22 +500,37 @@ func sayHello3(name:String) -> Bool{
 }
 print("func3 \(sayHello3(name: "Sj"))")
 
+
+print("====================")
+
+
 func sayHello4(lastName name:String,_ age:Int = 18) -> String{
     return ("func4 안녕 \(name) 나는 \(age)살이야")
 }
 print(sayHello4(lastName: "Sj"))
 print(sayHello4(lastName: "Sj",20))
 
+
+print("====================")
+
+
 func sayHello5(lastName name:String,nowAge age:Int = 18) -> String{
     return ("func5 안녕 \(name) 나는 \(age)살이야")
 }
 print(sayHello5(lastName: "Sj",nowAge: 33))
+
+
 --결과--
 func  Hello
+====================
 func2 안녕 sj
+====================
 func3 false
+====================
 func4 안녕 Sj 나는 18살이야
+====================
 func4 안녕 Sj 나는 20살이야
+====================
 func5 안녕 Sj 나는 33살이야
 ~~~
 
@@ -514,7 +553,11 @@ let someVehicle = Vehicle()
 someVehicle.currentSpeed = 0.1
 print(someVehicle.currentSpeed)
 someVehicle.makeNoise()
+
+
 print("========================")
+
+
 class Bicycle:Vehicle{
     var hasBaskey = false
     override var description: String{
@@ -532,6 +575,8 @@ bicycle.currentSpeed = 22.0
 print(someVehicle.currentSpeed)
 print(bicycle.currentSpeed)
 print(bicycle.description)
+
+
 print("========================")
 class Train:Vehicle{
     override func makeNoise() {
@@ -541,6 +586,8 @@ class Train:Vehicle{
 let train = Train()
 train.makeNoise()
 print("========================")
+
+
 class Car:Vehicle{
     var gear = 1
     override init() {
@@ -555,6 +602,8 @@ let someCar = Car()
 let someCar2 = Car(newGear: 5)
 print("현재 차의 기아위치 : \(someCar2.gear)")
 print("========================")
+
+
 ---결과---
 0.1
 소음발생
@@ -620,10 +669,12 @@ print("ssNumber:Int(fff) > \(ssNumber)") // return nil : 형변환실패시 nil�
 
 var serverCode: Int? = 404
 serverCode = nil
-print("serverCode! > \(serverCode!)") // <<< 현재 nil상태이므로 '!' 사용시 error가 발생한다. [Fatal error: Unexpectedly found nil while unwrapping an Optional value]
+// <<< 현재 nil상태이므로 '!' 사용시 error가 발생한다. 
+// [Fatal error: Unexpectedly found nil while unwrapping an Optional value]
+print("serverCode! > \(serverCode!)") 
 
 
----결과---
+---결과--- 
 fNumber  > 123
 sNumber  > Optional(123)
 ffString > fff
