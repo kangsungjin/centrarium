@@ -68,4 +68,26 @@ existing intent or create fallback intent to respond to unrecognized input."
 
 #### 샘플
 Android SDK [Sample](https://github.com/dialogflow/dialogflow-android-client)
+
+__Github__{: style="color: #e26716"}
+<img src="{{ site.baseurl }}/assets/github_dialogflow_base.png"  style="width: auto;"/>
+
+__Base/build.gradle__{: style="color: #e26716"}
+<img src="{{ site.baseurl }}/assets/github_dialogflow_build.png"  style="width: auto;"/>
+
+~~~java
+dependencies {
+        classpath 'com.android.tools.build:gradle:2.3.3'
+}
+//gradle version: 2.3.3 으로 셋팅해야 한다. 
+//자신의 Android Studio Gradle Version으로 읽어 들여지기 때문에, 수정하도록한다.
+~~~
+
+__apiAiSampleApp__{: style="color: #e26716"}
+<img src="{{ site.baseurl }}/assets/github_dialogflow_config.png"  style="width: auto;"/>
+
+~~~java
+    public static final String ACCESS_TOKEN = "{YOUR CLIENT ACCESS TOKEN}";
+~~~
+<hr/>
 <hr/>
