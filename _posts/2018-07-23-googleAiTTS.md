@@ -4,7 +4,7 @@ title:  "Google Ai-TTS[Text To Speech] 사용 방법"
 date:   2018-07-23 12:00:10
 author: ks J
 categories: GoogleServices
-tags: GoogleServices,Ai,Text To Speech
+tags: GoogleServices,Ai,TextToSpeech
 ---
 
 소개
