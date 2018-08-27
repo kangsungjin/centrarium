@@ -4,11 +4,10 @@ title:  "Google Text To Speech 사용 방법"
 date:   2018-07-23 12:00:10
 author: ks J
 categories: GoogleServices
-tags: [GoogleServices,Ai,Text To Speech]
+tags: GoogleServices,Ai,Text To Speech
 ---
 
-
-#Google Ai-TTS[Text To Speech] 사용 방법
+# Google Ai-TTS[Text To Speech] 사용 방법
 
 소개
 <hr/>
@@ -21,14 +20,14 @@ tags: [GoogleServices,Ai,Text To Speech]
 <hr/>
 
 
-<img src="{{ site.baseurl }}/assets/ppt_genral.png"  style="width: auto;"/>
+<img src="{{ site.baseurl }}/assets/ppt_genral.png"  class="profile"/>
 ① 설정 > General > Beta Features 에서 Client access token을 사용하여 Client작업을 실행하면 됩니다.<br/><br/>
 ①-① Client access totken   : Client개발시 Config에 적는 AccessToken Key Query를 전달 할때 사용한다.<br/><br/>
 ①-② Developer access token : Entity와 Intent를 관리하는데 사용한다.<br/><br/>
 
 
-<img src="{{ site.baseurl }}/assets/ppt_entity_create.png"  style="width: auto;"/>
-<img src="{{ site.baseurl }}/assets/ppt_entity_complete.png"  style="width: auto;"/>
+<img src="{{ site.baseurl }}/assets/ppt_entity_create.png"  class="profile"/>
+<img src="{{ site.baseurl }}/assets/ppt_entity_complete.png"  class="profile"/>
 ② Entities > CREATE ENTITY 를 사용해서 KEY를 만들면 됩니다. <br/><br/>
 ②-① Entity Name 설정 <br/><br/>
 - 이름 설정 : 엔티티 이름은 문자로 시작해야하며 A-Z, a-z, 0-9, _ (밑줄), - (대시) 만 포함 할 수 <br/>있습니다.<br/><br/>
@@ -36,28 +35,28 @@ tags: [GoogleServices,Ai,Text To Speech]
 - Allow automated expansion 자동 확장 허용<br/><br/>
 ②-② Entity Value - AOA를 적을때는 AOA(에이오에이) 한글 버전도 같이 적어줘야 한다.<br/><br/>
 
-<img src="{{ site.baseurl }}/assets/ppt_entity_switch_raw_mode.png"  style="width: auto;"/>
+<img src="{{ site.baseurl }}/assets/ppt_entity_switch_raw_mode.png"  class="profile"/>
 ②-③ ②-② 의 값을 분할해서 입력 하거나 [AOA, 에이오에이]라고 입력하면 된다. <br/>
 그외 Switch to raw mode에 들어가서 JSON 또는 CSV 형식으로 입력하면 많은 양의 데이터를 삽입하기 편하다.<br/><br/>
 
 
-<img src="{{ site.baseurl }}/assets/ppt_intent_creating.png"  style="width: auto;"/>
+<img src="{{ site.baseurl }}/assets/ppt_intent_creating.png"  class="profile"/>
 ③ Intents > CREATE INTENT <br/>
 ③-① Intent Name 설정<br/>
 ③-② Entities에서 만든 ENTITY KEY를 넣어주면 됩니다. 포커스를 두고  ↓ 키보드를 클릭하면 만들어둔 <br/>ENTITY KEY를 볼수 있습니다.<br/><br/>
 
-<img src="{{ site.baseurl }}/assets/ppt_intent_training.png"  style="width: auto;"/>
+<img src="{{ site.baseurl }}/assets/ppt_intent_training.png"  class="profile"/>
 ③-③ Training phrases는 Intent의 학습을 올려주는 셋팅으로, 처음 Intent생성시 무조건 한개정도는 적고 <br/>테스트해봐야 적용 됩니다. <br/><br/>
 
 
-<img src="{{ site.baseurl }}/assets/ppt_training_menu.png"  style="width: auto;"/>
+<img src="{{ site.baseurl }}/assets/ppt_training_menu.png"  class="profile"/>
 ④ Training <br/>
 지금까지 Client에서 검색한 내용에 대해서 볼수 있는영역 Analytics개념이라고 생각하면 <br/>
 좋을것 같다<br/><br/>
 
 
-<img src="{{ site.baseurl }}/assets/ppt_history_matching.png"  style="width: auto;"/>
-<img src="{{ site.baseurl }}/assets/ppt_history_not_matching.png"  style="width: auto;"/>
+<img src="{{ site.baseurl }}/assets/ppt_history_matching.png"  class="profile"/>
+<img src="{{ site.baseurl }}/assets/ppt_history_not_matching.png"  class="profile"/>
 ⑤ History<br/>
 Matching 또는 No Matching 된 내용을 확인해볼수 있다. <br/><br/>
 
