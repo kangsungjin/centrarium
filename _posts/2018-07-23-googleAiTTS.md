@@ -3,9 +3,10 @@ layout: archive
 title:  "Google Text To Speech 사용 방법"
 date:   2018-07-23 12:00:10
 author: ks J
-categories: Google Services
-tags: Google,Ai,Text To Speech
+categories: GoogleServices
+tags: [GoogleServices,Ai,Text To Speech]
 ---
+
 
 #Google Ai-TTS[Text To Speech] 사용 방법
 
