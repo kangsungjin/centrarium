@@ -37,6 +37,7 @@ tags: GoogleServices,Ai,TextToSpeech
 ②-③ ②-② 의 값을 분할해서 입력 하거나 [AOA, 에이오에이]라고 입력하면 된다. <br/>
 그외 Switch to raw mode에 들어가서 JSON 또는 CSV 형식으로 입력하면 많은 양의 데이터를 삽입하기 편하다.<br/><br/>
 
+사용자가 말하거나 입력한 데이터의 값을 ②-③에서 매칭후, ②-②키값을 response로 돌려준다고 생각하시면 됩니다. 
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/ppt_intent_creating.png"  style="width: auto;"/>
 ③ Intents > CREATE INTENT <br/>
