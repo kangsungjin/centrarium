@@ -49,7 +49,7 @@ tags: GoogleServices,Ai,TextToSpeech
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/ppt_training_menu.png"  style="width: auto;"/>
 ④ Training <br/>
-지금까지 Client에서 검색한 내용에 대해서 볼수 있는영역 Analytics개념이라고 생각하면 <br/>
+지금까지 Client에서 검색한 내용에 대해서 AI가 학습하는 이라고 생각하면 <br/>
 좋을것 같다<br/><br/>
 
 
