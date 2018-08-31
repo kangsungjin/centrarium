@@ -1,10 +1,10 @@
 ---
 layout: archive
-title:  "DialogFlow ISSUE"
+title:  "DialogFlow 검색하는 방법"
 date:   2018-07-24 12:00:10
 author: ks J
-categories: Ai
-tags: Ai
+categories: GoogleServices
+tags: Dialogflow GoogleServices Ai
 ---
 
 소개
