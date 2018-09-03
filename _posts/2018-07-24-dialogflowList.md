@@ -141,10 +141,93 @@ I: Index[: 3] WRITER_ENT: "작사"
 I: Index[: 4] KEYWORD_ENT: "최신곡"
 I: Index[: 5] ARTIST_ENT: "길구봉구"
 ~~~
-
-Android Sample Client에서 검색해서 나온 Response와 Dialogflow Trainring Response와의 Parameter순서가 다릅니다 
+Android Sample Client에서 검색해서 나온 Response와 Dialogflow Trainring Response와의 Parameter순서가 다릅니다.
+Webhook을 써서 Response를 커스텀 한다면 입맛에 맞는 데이터를 받을수 있을수 있겠지만, 
+현재는 일반적인 기능으로 데이터를 받고 있기때문에, 아래와 같은 생각으로 접근했습니다. 
 원래는 "길구봉구가 작사"한 노래를 찾기 위함으로 작사 KEY:WRITER를 추가하고  작사key앞에 Artist가 있으면 
-"(WRITE_ENT) where write=@ARTIST_ENT"를 넣으려고 했지만 순서가 맞지 않아 실패했습니다.
+"if(WRITE_ENT) Where WRITE=@ARTIST_ENT"를 넣으려고 했지만 순서가 맞지 않아 실패했습니다.
+
+<hr/>
+<br/>
+
+### ENTITY GROUPING  
+
+#### 아티스트 작곡/ 아티스트 작사 그룹핑으로 묶어서 한번에 받을수 없을까?
+
+<img src="{{ site.baseurl }}/assets/dialogflow_resource/grouping_0_information.png"  style="width: auto;"/>
+
+> 먼저 작사, 작곡 특정 단어에 대한 키를 만듭니다. 
+
+<img src="{{ site.baseurl }}/assets/dialogflow_resource/grouping_1.png"  style="width: auto;"/>
+
+> 그리고 그룹 엔티티를 만듭니다. 이때 동의어체크는 풀어두어야 합니다. 
+
+<img src="{{ site.baseurl }}/assets/dialogflow_resource/grouping_2.png"  style="width: auto;"/>
+
+> 위와 같이, 아티스트:작사 또는 아티스트:작곡 으로 만들면 됩니다. 그외는 응용해서 할수 있을것 같네요~
+
+<img src="{{ site.baseurl }}/assets/dialogflow_resource/grouping_3_intent_trainring.png"  style="width: auto;"/>
+
+> 그룹 엔티티를 만들고 나서 인텐트로 돌아와 트레이닝을 한번 시켜줍니다. 엔티티를 만들고 나서 인텐트에 적용 되는 시간이 
+3~5분 정도 소요되기 때문에 어느 정도 대기를 하고 트레이닝을 시켜줍니다. 
+> 처음 트레이닝을 하면 이전에 잡혀있던 엔티티가 잡혀서 그룹핑엔티티가 보이지 않습니다. 이럴경우에는 "길구봉구"-아티스트 엔티티
+를 삭제하고, "작사"-WRITE_KEY_NAME_ENT값의 범위를 "길구봉구가 작사"문자열 만큼 늘려줍니다. 그
+> 그리고 엔티티를 WRITE_GROUP_ENT로 변경해주고 SAVE를 하면 트레이닝이 완료 됩니다. 
+
+[엔티티 그룹 참조 가이드](https://dialogflow.com/docs/entities#dev_enum)
+
+
+~~~java
+{
+  "responseId": "-RANKEY-",
+  "queryResult": {
+    "queryText": "최신노래중에 길구봉구가 작사하지 않은 노래 찿아줘",
+    "parameters": {
+      "number": "",
+      "WRITER_GROUP_ENT": {
+        "WRITER_KEY_NAME_ENT": "작사",
+        "ARTIST_ENT": "길구봉구"
+      },
+      "ARTIST_ENT1": "",
+      "YEAR_ENT": "",
+      "SONG_ENT": "",
+      "ARTIST_ENT2": "이하이",
+      "ARTIST_ENT": "",
+      "MONTH_ENT": "",
+      "ALBUM_ENT": "",
+      "SING_CONTRACT1": "",
+      "ACTION_ENT": "",
+      "GARBAGE_ENT": [
+        "중에"
+      ],
+      "NEGATIVE_ENT": "부정",
+      "COMPOSER_GROUP_ENT": "",
+      "KEYWORD_ENT": "최신곡",
+      "SING_CONTRACT": "",
+      "KEYWORD_ENT1": "노래",
+      "GENRE_ENT": ""
+    },
+    "allRequiredParamsPresent": true,
+    "fulfillmentText": "노래 찾았습니다.",
+    "fulfillmentMessages": [
+      {
+        "text": {
+          "text": [
+            "노래 찾았습니다."
+          ]
+        }
+      }
+    ],
+    "intent": {
+      "name": "-RANKEY-",
+      "displayName": "노래검색"
+    },
+    "intentDetectionConfidence": 1,
+    "languageCode": "ko"
+  }
+}
+~~~
+
 
 
 
