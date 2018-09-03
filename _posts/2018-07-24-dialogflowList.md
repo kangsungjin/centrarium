@@ -156,23 +156,24 @@ Webhook을 써서 Response를 커스텀 한다면 입맛에 맞는 데이터를 
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/grouping_0_information.png"  style="width: auto;"/>
 
-> 먼저 작사, 작곡 특정 단어에 대한 키를 만듭니다. 
+먼저 작사, 작곡 특정 단어에 대한 키를 만듭니다. 
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/grouping_1.png"  style="width: auto;"/>
 
-> 그리고 그룹 엔티티를 만듭니다. 이때 동의어체크는 풀어두어야 합니다. 
+그룹 엔티티를 만듭니다. 이때 동의어체크는 풀어두어야 합니다. 
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/grouping_2.png"  style="width: auto;"/>
 
-> 위와 같이, 아티스트:작사 또는 아티스트:작곡 으로 만들면 됩니다. 그외는 응용해서 할수 있을것 같네요~
+위와 같이, 아티스트:작사 또는 아티스트:작곡 으로 만들면 됩니다. 그외는 응용해서 할수 있을것 같네요~
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/grouping_3_intent_trainring.png"  style="width: auto;"/>
 
-> 그룹 엔티티를 만들고 나서 인텐트로 돌아와 트레이닝을 한번 시켜줍니다. 엔티티를 만들고 나서 인텐트에 적용 되는 시간이 
-3~5분 정도 소요되기 때문에 어느 정도 대기를 하고 트레이닝을 시켜줍니다. 
-> 처음 트레이닝을 하면 이전에 잡혀있던 엔티티가 잡혀서 그룹핑엔티티가 보이지 않습니다. 이럴경우에는 "길구봉구"-아티스트 엔티티
-를 삭제하고, "작사"-WRITE_KEY_NAME_ENT값의 범위를 "길구봉구가 작사"문자열 만큼 늘려줍니다. 그
-> 그리고 엔티티를 WRITE_GROUP_ENT로 변경해주고 SAVE를 하면 트레이닝이 완료 됩니다. 
+1. 그룹 엔티티를 만들고 나서 인텐트로 돌아와 트레이닝을 한번 시켜줍니다. 
+2. 엔티티를 만들고 나서 인텐트에 적용 되는 시간이 3~5분 정도 소요되기 때문에 어느 정도 대기를 하고 트레이닝을 시켜줍니다. 
+3. 처음 트레이닝을 하면 이전에 잡혀있던 엔티티가 잡혀서 그룹핑엔티티가 보이지 않습니다. 
+이럴경우에는 "길구봉구"-아티스트 엔티티를 삭제합니다.
+4. "작사"-WRITE_KEY_NAME_ENT값의 범위를 "길구봉구가 작사"문자열 만큼 늘려줍니다. 
+5. 엔티티를 WRITE_GROUP_ENT로 변경해주고 SAVE를 하면 트레이닝이 완료 됩니다. 
 
 [엔티티 그룹 참조 가이드](https://dialogflow.com/docs/entities#dev_enum)
 
