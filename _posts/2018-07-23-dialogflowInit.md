@@ -31,7 +31,13 @@ tags: Dialogflow TTS Ai
 - 이름 설정 : 엔티티 이름은 문자로 시작해야하며 A-Z, a-z, 0-9, _ (밑줄), - (대시) 만 포함 할 수 있습니다.<br/><br/>
 - Define synonyms   동의어 정의 <br/>
 - Allow automated expansion 자동 확장 허용<br/><br/>
-②-② Entity Value - AOA를 적을때는 AOA(에이오에이) 한글 버전도 같이 적어줘야 한다.<br/><br/>
+
+<img src="{{ site.baseurl }}/assets/dialogflw_resource/entity_not_option.png"  style="width: auto;"/>
+Entity Option [Define synonyms(동의어 정의), Allow automated expansion(자동 확장 허용)]를 모두 선택 하지 않을경우, 어떻게 사용하는지에 대해서 테스트 해보았습니다. 
+
+
+②-② Entity Value - AOA를 적을때는 첫번째 값이 KEY가 되고, 두번째 값이 VALUE가 된다는걸 미리 염두해 두면 편하게 작성 할수 있습니다. 
+"AOA","AOA","에이오에이","에오에이"[AGENT-언어를 ko로 만들었다면, 가수명을 한국어 읽는법을 여러 상황으로 적어줘야 합니다. ]<br/><br/>
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/ppt_entity_switch_raw_mode.png"  style="width: auto;"/>
 ②-③ ②-② 의 값을 분할해서 입력 하거나 [AOA, 에이오에이]라고 입력하면 된다. <br/>
@@ -45,13 +51,12 @@ tags: Dialogflow TTS Ai
 ③-② Entities에서 만든 ENTITY KEY를 넣어주면 됩니다. 포커스를 두고  ↓ 키보드를 클릭하면 만들어둔 ENTITY KEY를 볼수 있습니다.<br/><br/>
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/ppt_intent_training.png"  style="width: auto;"/>
-③-③ Training phrases는 Intent의 학습을 올려주는 셋팅으로, 처음 Intent생성시 무조건 한개정도는 적고 테스트해봐야 적용 됩니다. <br/><br/>
+③-③ Training phrases는 Intent의 학습을 올려주는 셋팅으로, <strong>처음 Entity 생성후 무조건 1개이상은 Training 해야 검색되는 부분이 있습니다.</strong> <br/><br/>
 
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/ppt_training_menu.png"  style="width: auto;"/>
 ④ Training <br/>
-지금까지 Client에서 검색한 내용에 대해서 AI가 학습하는 이라고 생각하면 <br/>
-좋을것 같다<br/><br/>
+지금까지 Client에서 검색한 내용에 대해서 AI가 어떻게 학습하고 있는가에 대해서 확인해 볼수 있습니다. 
 
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/ppt_history_matching.png"  style="width: auto;"/>
