@@ -17,7 +17,8 @@ tags: [ Git,Blog ]
 - 댓글 기능 
 - 반응형
 
->> 블로그를 만들때 위 3개를 제일 많이 고려했다. 깔끔하면서 내가 작성한 정보에 대해서 상호작용을 할수 있는 댓글 기능까지 
+
+블로그를 만들때 위 3개를 제일 많이 고려했다. 깔끔하면서 내가 작성한 정보에 대해서 상호작용을 할수 있는 댓글 기능까지 
 여러 테마를 고려하였고, Hexo, jekyll 세팅테스트를 거쳐 드디어 jekyll로 하기 정했다. 
 지킬 테마중에 [Centrarium](https://github.com/bencentra/centrarium)를 선택하였고, 링크를 통해 가보면 디테일한 사용방법에 대해
 알아 볼수 있다. 
@@ -49,38 +50,38 @@ kangsungjin.github.io로 쓰고 완료 합니다.
 <img src="{{ site.baseurl }}/assets/git_blog/config_site_setting.png"  style="width: auto;"/>
 
 __제목__{: style="color: #e26716"}
->> Title은 블로그의 제목이 되고, SubTitle은 그야 말로 서브적으로 사용하는 제목입니다. 
+> Title은 블로그의 제목이 되고, SubTitle은 그야 말로 서브적으로 사용하는 제목입니다. 
 현재는 전체 관리에 미비하고, 포스팅만 하다보니 subtitle를 사용해 보고 있지만, Title과 
 Despcription만 작성해도 좋을것 같습니다. 
 
 __baseurl__{: style="color: #e26716"}
->> baseurl은 "" 으로 설정합니다. 이 칸에 "/blog/" 또는 "life"을 적을경우 
+> baseurl은 "" 으로 설정합니다. 이 칸에 "/blog/" 또는 "life"을 적을경우 
 
->>> kangsungjin.github.io/{life}/{tags} <br>
->>> kangsungjin.github.io/{blog}/{tags} <br>
+> kangsungjin.github.io/{life}/{tags} <br>
+> kangsungjin.github.io/{blog}/{tags} <br>
 
->>위와 같이 적용됩니다. 
+>위와 같이 적용됩니다. 
 
 <img src="{{ site.baseurl }}/assets/git_blog/config_build_setting.png"  style="width: auto;"/>
 
 __마크다운__{: style="color: #e26716"}
->> 마크다운도 여러 종류가 있기때문에, Kramdown을 확인후 작성해야 합니다. 공통된 문법은 비슷하다 
+> 마크다운도 여러 종류가 있기때문에, Kramdown을 확인후 작성해야 합니다. 공통된 문법은 비슷하다 
 미묘하게 다르기때문에 고려해야 하는 부분입니다. 
 
 
 <img src="{{ site.baseurl }}/assets/git_blog/config_archive_set.png"  style="width: auto;"/>
 
 __포스팅 기본체계__{: style="color: #e26716"}
->> Categories, Tags는 레이아웃 archive로 이루어졌고, 파라미터 링크는 /key/:page_name으로 구분합니다. 레이아웃은 _layouts폴더에 있으며, archive를 불러오는 것은 default.html이 담당합니다. 
+> Categories, Tags는 레이아웃 archive로 이루어졌고, 파라미터 링크는 /key/:page_name으로 구분합니다. 레이아웃은 _layouts폴더에 있으며, archive를 불러오는 것은 default.html이 담당합니다. 
 
 
 <img src="{{ site.baseurl }}/assets/git_blog/config_option_set.png"  style="width: auto;"/>
 
 __댓글기능__{: style="color: #e26716"}
->> disqus사이트에 가서 가입후 가입한 name을 적는 칸입니다. disqus_shortname : disqus_NAME
+> disqus사이트에 가서 가입후 가입한 name을 적는 칸입니다. disqus_shortname : disqus_NAME
 
 __구글 어널라이틱스__{: style="color: #e26716"}
->> 블로그 전반을 트래킹 하고 싶다면, 구글 어널라이틱스에서 ID값을 받아와서 설정합니다. 
+> 블로그 전반을 트래킹 하고 싶다면, 구글 어널라이틱스에서 ID값을 받아와서 설정합니다. 
 
 ### 오류 판단 하기 
 
