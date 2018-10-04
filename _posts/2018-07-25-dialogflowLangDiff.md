@@ -41,7 +41,7 @@ __apiAiSampleApp__{: style="color: #e26716"}
     public static final String ACCESS_TOKEN = "{YOUR CLIENT ACCESS TOKEN}";
 ~~~
 <hr/>
-<hr/>
+
 
 ### 일본 Excel 문제점
 1. '?' 문구가 들어간 데이터를 찾아서 고쳐야한다. 
@@ -59,8 +59,9 @@ _해결방법_
 
 <img src="{{ site.baseurl }}/assets/dialogflw_resource/langdiff/AiService.png"  style="width: auto;"/>
 - 또는 Dialogflow의 agent는 kr그대로 두고 sample source에서 Google Recognition에 값만 kr, jp로 변경해서 사용하는것이다. 
-> 이방법은 검색은 되지만 TTS로 변경시 response가 한글로 오기 때문에 클라이언트에서 추가 작업을 해야 할 부분도 생긴다. 
-> 일본어만 틀렸을때 Dialogflow를 수정시 한번에 삭제 할수가 없다. 왜냐면 중간 또는 맨 처음에 한국정보가 들어가 있기 때문이다. 
+
+이방법은 검색은 되지만 TTS로 변경시 response가 한글로 오기 때문에 클라이언트에서 추가 작업을 해야 할 부분도 생긴다. 
+일본어만 틀렸을때 Dialogflow를 수정시 한번에 삭제 할수가 없다. 왜냐면 중간 또는 맨 처음에 한국정보가 들어가 있기 때문이다. 
 
 _주의할점_
 - "空","空","そら","ソラ" 이 예는 Google Recognition에 어떤 음성을 인식했냐에 따라 디테일이 달라질것으로 보인다. 
@@ -96,3 +97,10 @@ _일본장르_
 @ KEYWORD_ENT   - "빈값"        :"노래"
 
 ~~~
+
+
+### ENTITY 추가 할때 주의 사항
+<img src="{{ site.baseurl }}/assets/dialogflw_resource/langdiff/entitys_add.png"  style="width: auto;"/>
+
+1."()" 괄호가 들어가면 오류가 난다. 
+2."" 쌍따움표로 문자열을 감싸야 한다. 그냥 따옴표 ''는 오류남 > ''를 수정하다가 I'm같은 값을 주의해서 변경 하도록한다. 
